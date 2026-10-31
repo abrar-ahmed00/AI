@@ -6,7 +6,6 @@ Run: python search.py
 from collections import deque
 import heapq
 
-# Directed weighted graph: node -> [(neighbor, step_cost), ...]
 GRAPH = {
     'S': [('A', 1), ('B', 4)],
     'A': [('C', 2), ('D', 5)],
@@ -71,9 +70,9 @@ def dls(start, goal, limit):
         if node == goal:
             return path
         if depth == limit:
-            return None  # cutoff
+            return None
         for nxt, _ in GRAPH[node]:
-            if nxt not in path:  # avoid cycles on current path
+            if nxt not in path:
                 result = recurse(nxt, depth + 1, path + [nxt])
                 if result:
                     return result
