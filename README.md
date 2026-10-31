@@ -43,14 +43,6 @@ path with the fewest edges (cost 9). Only UCS returns the cheapest path (cost 7)
 | IDDFS | Yes | Yes (unit cost) | O(b^d) | O(bd) | Stack / recursion |
 | UCS | Yes (ε > 0) | Yes | O(b^(1+C*/ε)) | O(b^(1+C*/ε)) | Priority queue (min-heap) |
 
-## Short Explanation (English / বাংলা)
-
-- **BFS:** Expands level by level using a queue. / কিউ ব্যবহার করে লেভেল ধরে ধরে নোড এক্সপ্যান্ড করে।
-- **DFS:** Goes as deep as possible first using a stack. / স্ট্যাক ব্যবহার করে আগে যতদূর সম্ভব গভীরে যায়।
-- **DLS:** DFS with a depth cutoff `l`. / DFS-এর সাথে একটি ডেপথ লিমিট `l` থাকে।
-- **IDDFS:** Runs DLS with limits 0, 1, 2, ... until the goal is found. Gets BFS completeness with DFS memory. / লিমিট ০, ১, ২... বাড়িয়ে DLS চালায়; BFS-এর completeness আর DFS-এর কম মেমোরি দুটোই পায়।
-- **UCS:** Always expands the node with the lowest path cost using a priority queue. / প্রায়োরিটি কিউ দিয়ে সবসময় সবচেয়ে কম খরচের নোড আগে এক্সপ্যান্ড করে।
-
 ## Files
 
 - `search.py`: implementation and demo
